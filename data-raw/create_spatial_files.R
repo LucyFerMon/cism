@@ -1,11 +1,16 @@
+library(devtools)
 library(raster)
 library(ggplot2)
+library(maptools)
+
+devtools::use_data_raw()
+
 
 # Get mozambique shapefile
-moz0 <- getData('GADM', country = 'MOZ', level = 0)
-moz1 <- getData('GADM', country = 'MOZ', level = 1)
-moz2 <- getData('GADM', country = 'MOZ', level = 2)
-moz3 <- getData('GADM', country = 'MOZ', level = 3)
+moz0 <- getData('GADM', country = 'MOZ', level = 0, download = FALSE)
+moz1 <- getData('GADM', country = 'MOZ', level = 1, download = FALSE)
+moz2 <- getData('GADM', country = 'MOZ', level = 2, download = FALSE)
+moz3 <- getData('GADM', country = 'MOZ', level = 3, download = FALSE)
 
 # Subset to manhica
 man2 <- moz2[moz2@data$NAME_2 == 'Manhiça',]
@@ -36,10 +41,5 @@ mop3_fortified <- fortify(mop3, region = 'NAME_3')
 
 objects <- ls()
 for (i in 1:length(objects)){
-  x <- get(objects[i])
-  save(x,
-       file = paste0('data/',
-                     objects[i],
-                     '.rds'))
-  message(i)
+  eval(parse(text = paste0("devtools::use_data(", objects[i], ", overwrite = TRUE)")))
 }
