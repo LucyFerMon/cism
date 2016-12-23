@@ -317,4 +317,4 @@ ggplot() +
 
 ## Advanced use
 
-Not finished but in process.
+Not finished but in process. It will be interesting to develop tools for randomization of houses and add our clusters function of automatic grouping.
