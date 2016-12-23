@@ -317,4 +317,11 @@ ggplot() +
 
 ## Advanced use
 
+<<<<<<< HEAD
+Not finished but in LUCIA process.
+=======
 Not finished but in DEVELOP process.
+>>>>>>> develop
+
+
+Hola hola pajaro!
