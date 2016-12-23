@@ -317,6 +317,10 @@ ggplot() +
 
 ## Advanced use
 
+<<<<<<< HEAD
 
 Not finished but in process. It will be interesting to develop tools for randomization of houses and add our clusters function of automatic grouping.
 
+=======
+Not finished but in process. It will be interesting to develop tools for randomization of houses and add our clusters function of automatic grouping.
+>>>>>>> develop
